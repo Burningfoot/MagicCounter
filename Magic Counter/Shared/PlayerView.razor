@@ -3,7 +3,20 @@
 @using ReactiveUI.Blazor
 @inherits ReactiveInjectableComponentBase<PlayerViewModel>
 <MudItem Class="pa-2" xs="6">
-    <MudCard Style="height: 100%;">
-        <MudText Typo="Typo.body1">@Name</MudText>
+    <MudCard Class="" Style="position:relative; height: 100%; overflow:hidden;">
+        <MudText Typo="Typo.body1">@ViewModel.Player.Name</MudText>
+        <MudText Typo="Typo.body1">@ViewModel.Player.LifePoints</MudText>
+        <MudText Typo="Typo.body1">@ViewModel.Player.CommanderDmg</MudText>
+        <MudToolBar Style="position:absolute; bottom: 0; width: 100%;"
+                    Class="mud-theme-primary justify-content-evenly align-self-end"
+                    Dense="true">
+            <MudIconButton Variant="Variant.Filled"
+                           Icon="@Icons.Filled.ExposurePlus1"
+                           OnClick="@(() => {ViewModel.AddLifePoints.Execute().Subscribe();  PlayerChanged.InvokeAsync(ViewModel.Player);})"/>
+            <MudIconButton Variant="Variant.Filled"
+                           Icon="@Icons.Filled.ExposureNeg1" 
+                           OnClick="@(() => {ViewModel.AddCommanderDmg.Execute().Subscribe();  PlayerChanged.InvokeAsync(ViewModel.Player);})" />
+        </MudToolBar>
+
     </MudCard>
 </MudItem>

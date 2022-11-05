@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Magic_Counter.Models.PlayerConditions
 {
-	internal class CommanderDamage
+	public class CommanderDamage : PlayerCondition
 	{
 	}
 }

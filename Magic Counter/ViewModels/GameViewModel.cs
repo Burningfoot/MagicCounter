@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Magic_Counter.Models.PlayerConditions
+namespace Magic_Counter.ViewModels
 {
-    public abstract class PlayerCondition : ReactiveObject
+    public class GameViewModel : ReactiveObject
     {
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Magic_Counter.Models;
+using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,25 +10,27 @@ namespace Magic_Counter.Shared
 {
 	partial class PlayerView
 	{
-		private string name;
+
+		private Player player;
+
 		[Parameter]
-		public string Name
+		public Player Player
 		{
-			get => name;
-			set 
+			get => player;
+			set
 			{
-				if (value == name) return;
-				name = value;
-				NameChanged.InvokeAsync(value);
+				if (value == player) return;
+				player = value;
+				PlayerChanged.InvokeAsync(value);
 			}
 		}
 
-        [Parameter]
-        public EventCallback<string> NameChanged { get; set; }
+		[Parameter]
+        public EventCallback<Player> PlayerChanged { get; set; }
 
         protected override void OnParametersSet()
 		{
-			ViewModel.Name = Name;
+			ViewModel.Player = Player;
 			base.OnParametersSet();
 		}
 	}

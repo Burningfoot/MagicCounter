@@ -17,6 +17,7 @@ public static class MauiProgram
 			});
 
 		builder.Services.AddTransient<PlayerViewModel>();
+		builder.Services.AddSingleton<GameViewModel>();
 
 
 

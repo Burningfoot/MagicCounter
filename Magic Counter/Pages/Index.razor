@@ -1,5 +1,14 @@
 ﻿@page "/"
+@using Magic_Counter.Models
+@using Magic_Counter.ViewModels
+@using ReactiveUI.Blazor
+@inherits ReactiveInjectableComponentBase<GameViewModel>
 <MudGrid Style="height: 100%" Spacing="0">
-        <PlayerView Name="Max"/>
-        <PlayerView Name="Tim"/>
+    @foreach (var player in @players)
+    {
+        <PlayerView Player = "@player" />
+    }
 </MudGrid>
+
+
+
