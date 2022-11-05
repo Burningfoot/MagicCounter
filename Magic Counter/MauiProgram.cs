@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components.WebView.Maui;
+﻿using Magic_Counter.ViewModels;
+using Microsoft.AspNetCore.Components.WebView.Maui;
 using MudBlazor.Services;
 
 namespace Magic_Counter;
@@ -14,6 +15,10 @@ public static class MauiProgram
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 			});
+
+		builder.Services.AddTransient<PlayerViewModel>();
+
+
 
 		builder.Services.AddMauiBlazorWebView();
 		#if DEBUG
