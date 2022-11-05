@@ -1,0 +1,25 @@
+﻿@using MudBlazor
+@inherits LayoutComponentBase
+
+	<MudThemeProvider @bind-IsDarkMode="darkThemeSetting" />
+	<MudDialogProvider />
+	<MudSnackbarProvider />
+		
+	<MudLayout Class="vh-100">
+		<MudAppBar>
+				Magic Counter
+		</MudAppBar>
+		<MudDrawer @bind-Open="drawerOpen" ClipMode="DrawerClipMode.Docked">
+		</MudDrawer>
+		<MudMainContent Class="h-100">
+			@Body
+		</MudMainContent>
+	</MudLayout>
+
+
+
+@code
+{
+	bool drawerOpen = false;
+	bool darkThemeSetting = AppInfo.RequestedTheme == AppTheme.Light ? false : true;
+}
