@@ -3,10 +3,12 @@
 @using Magic_Counter.ViewModels
 @using ReactiveUI.Blazor
 @inherits ReactiveInjectableComponentBase<GameViewModel>
-<MudGrid Style="height: 100%" Spacing="0">
+<MudGrid Style="height: 100%"
+          Class="ma-0 pa-0"
+          Spacing="0">
     @foreach (var player in @players)
     {
-        <PlayerView Player = "@player" />
+        <PlayerView Player="@player" />
     }
 </MudGrid>
 

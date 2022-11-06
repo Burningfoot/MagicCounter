@@ -1,5 +1,6 @@
 ﻿using Magic_Counter.Models;
 using Magic_Counter.Models.PlayerConditions;
+using Magic_Counter.Models.PlayerConditions.Mana;
 using ReactiveUI;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,9 @@ namespace Magic_Counter.ViewModels
         }
 
         public ReactiveCommand<Unit, Unit> AddLifePoints { get; set; }
+        public ReactiveCommand<Unit, Unit> AddMinusLife { get; set; }
         public ReactiveCommand<Unit, Unit> AddCommanderDmg { get; set; }
+        public ReactiveCommand<Unit, Unit> AddColorlessMana { get; set; }
 
         public PlayerViewModel()
         {
@@ -42,10 +45,27 @@ namespace Magic_Counter.ViewModels
                 Player.PlayerConditions.Add(new LifePoint());
             })
              .DisposeWith(disposables);
+
+            disposables = new CompositeDisposable();
+
+            AddMinusLife = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Delay(0);
+                Player.PlayerConditions.Add(new MinusLifePoint());
+            })
+             .DisposeWith(disposables);
+
             AddCommanderDmg = ReactiveCommand.CreateFromTask(async () =>
             {
                 await Task.Delay(0);
                 Player.PlayerConditions.Add(new CommanderDamage());
+            })
+             .DisposeWith(disposables);
+
+            AddColorlessMana = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await Task.Delay(0);
+                Player.PlayerConditions.Add(new Colorless());
             })
              .DisposeWith(disposables);
         }

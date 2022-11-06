@@ -5,13 +5,8 @@
 	<MudDialogProvider />
 	<MudSnackbarProvider />
 		
-	<MudLayout Class="vh-100">
-		<MudAppBar>
-				Magic Counter
-		</MudAppBar>
-		<MudDrawer @bind-Open="drawerOpen" ClipMode="DrawerClipMode.Docked">
-		</MudDrawer>
-		<MudMainContent Class="h-100">
+	<MudLayout >
+		<MudMainContent Style="height: 100%" Class="ma-0 pa-0">
 			@Body
 		</MudMainContent>
 	</MudLayout>

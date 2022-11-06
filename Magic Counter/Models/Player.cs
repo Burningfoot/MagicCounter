@@ -1,4 +1,5 @@
 ﻿using Magic_Counter.Models.PlayerConditions;
+using Magic_Counter.Models.PlayerConditions.Mana;
 using ReactiveUI;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ namespace Magic_Counter.Models
         {
             get
             {
-                return playerConditions.Where(w => w.GetType().Equals(typeof(LifePoint))).Count() - CommanderDmg;
+                return playerConditions.Where(w => w.GetType().Equals(typeof(LifePoint))).Count() - MinusLifePoints - CommanderDmg;
             }
         }
 
@@ -45,6 +46,22 @@ namespace Magic_Counter.Models
             get
             {
                 return playerConditions.Where(w => w.GetType().Equals(typeof(CommanderDamage))).Count();
+            }
+        }
+
+        public int MinusLifePoints
+        {
+            get
+            {
+                return playerConditions.Where(w => w.GetType().Equals(typeof(MinusLifePoint))).Count();
+            }
+        }
+
+        public int ColorLessMana
+        {
+            get
+            {
+                return playerConditions.Where(w => w.GetType().Equals(typeof(Colorless))).Count();
             }
         }
 
