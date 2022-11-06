@@ -28,8 +28,6 @@ namespace Magic_Counter.Pages
             players.Add(new Player() { Name = "Tim"});
             players.Add(new Player() { Name = "Ellen"});
             players.Add(new Player() { Name = "Ela"});
-            players.Add(new Player() { Name = "Ellen"});
-            players.Add(new Player() { Name = "Ela"});
         }
     }
 }

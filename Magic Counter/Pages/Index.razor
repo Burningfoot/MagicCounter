@@ -5,7 +5,8 @@
 @inherits ReactiveInjectableComponentBase<GameViewModel>
 <MudGrid Style="height: 100%"
           Class="ma-0 pa-0"
-          Spacing="0">
+          Spacing="0"
+Justify="Justify.SpaceBetween">
     @foreach (var player in @players)
     {
         <PlayerView Player="@player" />
