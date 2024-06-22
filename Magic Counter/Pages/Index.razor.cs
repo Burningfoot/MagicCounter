@@ -1,4 +1,5 @@
 ﻿using Magic_Counter.Models;
+using Magic_Counter.Models.PlayerConditions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,10 +25,15 @@ namespace Magic_Counter.Pages
         public Index()
         {
             players = new List<Player>();
-            players.Add(new Player() { Name = "Max"});
-            players.Add(new Player() { Name = "Tim"});
-            players.Add(new Player() { Name = "Ellen"});
-            players.Add(new Player() { Name = "Ela"});
+            for (int i = 0; i < 4; i++)
+            {
+                var player = new Player();
+                for (int j = 0; j < 40; j++)
+                {
+                    player.PlayerConditions.Add(new LifePoint());
+                }
+                players.Add(player);
+            }
         }
     }
 }

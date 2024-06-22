@@ -50,12 +50,24 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="MudBlazor" Version="6.0.17" />
-      <PackageReference Include="ReactiveUI.Blazor" Version="18.3.1" />
+      <PackageReference Include="MudBlazor" Version="6.20.0" />
+      <PackageReference Include="ReactiveUI.Blazor" Version="20.1.1" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Data\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.AspNetCore.Components.WebView.Maui" Version="8.0.60" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.Maui.Controls" Version="8.0.60" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.60" />
     </ItemGroup>
 
 </Project>
