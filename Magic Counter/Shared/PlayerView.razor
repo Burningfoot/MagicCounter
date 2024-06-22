@@ -7,7 +7,7 @@
          Style="height:50%;">
     <div style="height: 100%; width: 100%; rotate: @(Angle)deg">
         <MudContainer Style="height: 100%;"
-                      Class="ma-0 pa-5">
+                      Class="ma-0 pa-2">
             <MudStack Spacing="0"
                       Justify="Justify.Center"
                       Style="height:inherit"
@@ -16,7 +16,7 @@
                           Row="true"
                           Class="ma-0 pa-0 flex-1 d-flex">
 
-                    <MudStack Spacing="0" Class="d-flex gap-0">
+                    <MudStack Spacing="0" Class="ma-0 pa-0 d-flex gap-0">
 
                         @* <div class="flex-grow-1" /> *@
                         <MudIconButton Class="flex-grow-1"
@@ -28,7 +28,7 @@
 
                     <div class="d-flex flex-grow-1 gap-0">
                         <MudPaper Class="ma-0 pa-0 flex-1 flex-column d-flex">
-                            <MudStack Class="ma-0 pa-0 flex-1 flex-column d-flex">
+                            <MudStack Class="ma-0 pa-0 flex-1 flex-column d-flex" Spacing="0">
                                 @* <MudItem Class="ma-0 pa-0 flex-grow-1"> *@
                                 <MudStack Class="ma-0 pa-0 flex-grow-1" Spacing="0" Row>
                                     <div class="flex-grow-0">
@@ -43,7 +43,7 @@
                                         <div class="flex-grow-1"/>
                                         <div class="d-flex flex-grow-1">
                                             <div class="flex-grow-1"/>
-                                            <MudText Style="font-size: 30vh;"
+                                            <MudText Style="font-size: 22vh;"
                                                      Class="flex-grow-0">
                                                 @ViewModel.Player.LifePoints
                                             </MudText>
